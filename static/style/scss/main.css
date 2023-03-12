@@ -1,0 +1,207 @@
+@import url("../fonts/fonts.css");
+:root {
+  --font-face: Poppins;
+  --button-primary-color: var(--blue-color);
+  --button-secondary-color: transparent;
+  --transition-standard: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  --bg-color-primary: #f0f2f3;
+  --bg-color-secondary:#e7eaec;
+  --bg-color-third:#d8e6f0;
+  --border-color-primary: rgba(197, 197, 197, 0.76);
+  --font-color-primary: rgb(29, 29, 29);
+  --font-color-secondary: rgb(99, 99, 99);
+  --code-bg-color: rgba(194, 191, 191, 0.5);
+  --blue-color: rgb(77, 77, 255);
+  --light-blue-color: rgba(119, 119, 255, 0.315);
+  --code-editor-bg-color: rgb(216, 216, 216);
+  --code-editor-bar-color: rgb(180, 180, 180);
+  --scrollbar-bg-color:var(--bg-color-secondary);
+  --scrollbar-color: var(--light-blue-color);
+  --blog-article-bg: rgb(245, 245, 245);
+  --blog-article-box-shadow: 8px 9px 18px -5px rgb(0 0 0 / 22%);
+  --bg-color-footer: #dee7ee;
+}
+
+body {
+  font-family: var(--font-face);
+  background-color: var(--bg-color-primary);
+  color: var(--font-color-primary);
+  height: 100%;
+  margin: 0;
+  cursor: default;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color-primary: #11191f;
+    --bg-color-secondary:#1b2125;
+    --bg-color-third: #2b2e30;
+    --border-color-primary: rgb(59, 59, 59);
+    --font-color-primary: rgb(250, 250, 250);
+    --font-color-secondary: rgb(184, 184, 184);
+    --code-bg-color: rgba(65, 65, 65, 0.5);
+    --blue-color: rgb(77, 77, 255);
+    --light-blue-color: rgba(119, 119, 255, 0.315);
+    --code-editor-bg-color: rgb(19, 19, 19);
+    --code-editor-bar-color: rgb(49, 49, 49);
+    --scrollbar-bg-color:var(--bg-color-secondary);
+    --scrollbar-color: var(--light-blue-color);
+    --blog-article-bg: rgb(71, 71, 71);
+    --blog-article-box-shadow: 8px 9px 18px -5px rgb(0 0 0 / 22%);
+    --bg-color-footer: #1f2122;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color-primary: #f0f2f3;
+    --bg-color-secondary:#e7eaec;
+    --bg-color-third:#d8e6f0;
+    --border-color-primary: rgba(197, 197, 197, 0.76);
+    --font-color-primary: rgb(29, 29, 29);
+    --font-color-secondary: rgb(99, 99, 99);
+    --code-bg-color: rgba(194, 191, 191, 0.5);
+    --blue-color: rgb(77, 77, 255);
+    --light-blue-color: rgba(119, 119, 255, 0.315);
+    --code-editor-bg-color: rgb(216, 216, 216);
+    --code-editor-bar-color: rgb(180, 180, 180);
+    --scrollbar-bg-color:var(--bg-color-secondary);
+    --scrollbar-color: var(--light-blue-color);
+    --blog-article-bg: rgb(245, 245, 245);
+    --blog-article-box-shadow: 8px 9px 18px -5px rgb(0 0 0 / 22%);
+    --bg-color-footer: #dee7ee;
+  }
+}
+.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  padding: 10px;
+}
+
+hgroup h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: Poppins-Extra-Bold;
+}
+hgroup h1 + h2 {
+  font-size: 1.3rem;
+  color: var(--font-color-secondary);
+  margin: 0px;
+  font-family: Poppins-Extra-Light;
+}
+hgroup h1 ~ p {
+  width: 70%;
+}
+
+p code,
+p kbd,
+p samp, h1 code,
+h1 kbd,
+h1 samp, h2 code,
+h2 kbd,
+h2 samp, h3 code,
+h3 kbd,
+h3 samp, h4 code,
+h4 kbd,
+h4 samp, h5 code,
+h5 kbd,
+h5 samp, h6 code,
+h6 kbd,
+h6 samp {
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: var(--code-bg-color);
+  color: var(--font-color-secondary);
+  padding: 5px;
+  border-radius: 5px;
+  line-height: 2rem;
+}
+
+.transition-standard {
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes from-left {
+  0% {
+    transform: rotateX(50deg) translateX(-200vw);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg) translateX(0);
+    opacity: 1;
+  }
+}
+a[role=button],
+.btn-standard {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  border-radius: 5px;
+  background-color: var(--button-primary-color);
+  color: white;
+  border: 2px solid var(--button-primary-color);
+}
+a[role=button]:hover,
+.btn-standard:hover {
+  transform: scale(1.06, 1.06);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  filter: brightness(120%);
+}
+a[role=button].secondary-btn,
+.btn-standard.secondary-btn {
+  background-color: var(--button-secondary-color);
+  border: 2px solid var(--button-primary-color);
+  color: var(--button-primary-color);
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4D4DFF #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 9px;
+  width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: var(--scrollbar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--scrollbar-color);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0C5B9E;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #184FFF;
+}
+
+::-moz-selection {
+  background-color: var(--light-blue-color);
+}
+
+::selection {
+  background-color: var(--light-blue-color);
+}/*# sourceMappingURL=main.css.map */
